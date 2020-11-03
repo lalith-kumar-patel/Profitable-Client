@@ -1,0 +1,62 @@
+form {
+    box-shadow: 0 0 .25rem grey;
+    margin: 3rem 0 3rem;
+    border-radius: .25rem;
+    padding: 3rem 6rem 3rem 6rem;
+}
+
+mat-divider {
+    width: 12.5rem;
+    margin-bottom: 1.25rem;
+    border-top-color: #f44336;
+    margin-top: 1.25rem;
+}
+
+mat-form-field {
+    width: 15.625rem;
+    margin-right: 2rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.form-actions button {
+    width: 12.5rem;
+}
+
+.center-horizontally {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form-heading {
+    display: flex;
+    justify-content: center;
+}
+
+#matDividerCenter {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    border-top-color: #f44336;
+    animation: dividerExtendCenter 1s ease-in forwards;
+}
+
+@keyframes dividerExtendCenter {
+    from { width: 2rem; } 
+    to { width: 20rem; }
+}
+
+.space {
+    width: 2rem;
+}
+
+.personal-form-position {
+    display: flex;
+    justify-content: space-evenly;
+}

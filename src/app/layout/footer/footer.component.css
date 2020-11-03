@@ -1,0 +1,13 @@
+footer {
+    padding: 2rem;
+    background-color: #008fd4;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-brand div {
+    margin-bottom: 0rem;
+    padding: 0px;
+    letter-spacing: .125rem;
+}

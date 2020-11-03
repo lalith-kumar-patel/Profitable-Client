@@ -1,0 +1,69 @@
+<div class="register-form-container">
+    <form (ngSubmit)="sendOtp()" [formGroup]="registerUserForm">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="fname" type="text" required />
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lname" type="text" required />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Sponsor ID</mat-label>
+            <input matInput type="number" name="spnid" formControlName="sponsorId" [readonly]="referralId!==10000" />
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="outline">
+            <mat-label>Package</mat-label>
+            <mat-select formControlName="packageAmt">
+                <mat-option *ngFor="let package of packages" [value]="package">
+                    {{ package }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+                <mat-option *ngFor="let gender of genders" [value]="gender">
+                    {{ gender }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>	&nbsp;
+        <mat-form-field appearance="outline">
+            <mat-label>Date of Birth</mat-label>
+            <input type="date" formControlName="dob" name="dob" matInput required />
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="emailId" type="email" required />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required placeholder="Password"  />
+            <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="confirmNewPassword" [type]="hide ? 'password' : 'text'" required />
+            <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone number</mat-label>
+            <input matInput formControlName="phoneNumber" type="tel" required />
+        </mat-form-field>
+        <br>
+        <button type="submit" id="actionButtonColor" mat-raised-button>Register</button>
+        &nbsp;
+        <button [routerLink]=" ['/'] "
+        id="passiveButtonColor" mat-button>Go Back</button>
+        </form>
+    <h5 class="error-message">{{errorMessage}}</h5>
+    <h5 class="success-message">{{successMessage}}</h5>
+</div>
+

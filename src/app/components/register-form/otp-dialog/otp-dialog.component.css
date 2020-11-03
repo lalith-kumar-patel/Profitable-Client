@@ -1,0 +1,9 @@
+.mat-dialog-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} 
+
+.mat-dialog-actions button {
+    width: 45%;
+}

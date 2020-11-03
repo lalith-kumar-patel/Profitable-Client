@@ -1,0 +1,27 @@
+<mat-card class="notf-card" [class.mat-elevation-z8]="true" >
+    <mat-card-title>
+        <span id="m0Pb0" class="mat-h1"><span *ngIf="provider"> Provide</span> <span *ngIf="getter"> Get</span></span>
+        <span id="m0Pb0" class="mat-display-1">{{ countDown }}</span>
+    </mat-card-title>
+    <mat-card-content>
+        <span class="mat-body">
+            <span *ngIf="provider"> Please pay 10% of the commitment amount ({{ loggedInCustomer.packageAmt }}) which is
+                {{ provider.providerAmt }}
+            </span>
+            <span *ngIf="getter">
+                Provider User Id :{{getter.providerId}}
+                Provider Name: {{ getter.providerName}}
+                Provider Phone Number: {{getter.providerPhoneNumber}}
+                Amount : {{getter.getterAmt}}
+            </span>
+        </span>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="openPaymentDetailsDialog()" mat-raised-button id="actionButtonColor" *ngIf="provider">Provide</button>
+        <span *ngIf="getter">
+            <button (click)="getterSubmit()" mat-raised-button id="actionButtonColor">Confirm</button>
+            <button (click)="getterReject()" mat-raised-button id="actionButtonColor" *ngIf="flag">Reject</button>
+        </span>
+
+    </mat-card-actions>
+</mat-card>

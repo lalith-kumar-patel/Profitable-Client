@@ -1,0 +1,51 @@
+
+.error-section {
+    height: 100vh;
+    margin: 2rem;
+    background: url('../../../assets/not_found_404.svg') no-repeat center;
+}
+
+.title,
+.title span {
+    letter-spacing: .25rem;
+    word-spacing: .1875rem;
+    color: #ff733f;
+
+}
+
+.body {
+    margin-bottom: 5rem;
+    color: #404040;
+    letter-spacing: .1875rem;
+    word-spacing: .25rem;
+    text-align: center;
+}
+
+.actions {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    border-radius: .25rem;
+}
+
+.actions span,
+.link {
+    letter-spacing: 1rem;
+    word-spacing: 1rem;
+}
+
+.link:hover {
+    color: #e2f6fb;
+    cursor: pointer;
+}
+
+.link {
+    font-size: 1.25rem;
+    transition: all 0.5s 0.1s;
+    padding: 1rem;
+    background: transparent;
+    color: white;
+}

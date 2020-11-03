@@ -1,0 +1,32 @@
+.links button {
+    margin-right: 2rem;
+    font-size: .9375rem;
+    letter-spacing: .0625rem;
+}
+
+.brand {
+    font-size: 1.125rem;
+    letter-spacing: .125rem;
+    word-spacing: .125rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.nav-content {
+    display: flex;
+    width: 100%;
+}
+
+mat-toolbar {
+    z-index: 2;
+    background-color: #008fd4;
+    color: white;
+}
+
+.position-fixed {
+    position: fixed;
+    top: 0%;
+}
+

@@ -1,0 +1,39 @@
+<div class="" style="height: 100vh; overflow: hidden;">
+    <div class="text-section">
+        <span class="mat-h1">Withdraw Level Bonus</span>
+        <mat-divider></mat-divider>
+        <div class="alert mat-body-1" *ngIf="withdrawDisable">
+            <span class="spacer"></span>
+            <p>Cant Withdraw Level Bonus Amount today</p>
+            <span class="spacer"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <span class="spacer"></span>
+        <form>
+            <div class="balance-info">
+                <span class="mat-h3">Level Bonus Withdraw Balance :
+                    {{ 200 | currency:'INR':'symbol':'1.0-0' }}</span>
+            </div>
+            <mat-divider id="matDividerCenter"></mat-divider>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Amount</mat-label>
+                <input (keyup)="validateInputAmount($event)" matInput name="amount" />
+            </mat-form-field>
+            <br>
+            <div class="form-actions">
+                <button type="submit" mat-raised-button id="actionButtonColor"
+                    [disabled]="withdrawDisable || invalidInput">Withdraw</button>
+            </div>
+        </form>
+        <span class="spacer"></span>
+    </div>
+
+
+    <div class="text-section">
+        <span class="mat-body-1">
+            Withdraw timings: Saturday &amp; Sunday - 8:30 am to 7:30pm
+        </span>
+    </div>
+</div>

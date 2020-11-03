@@ -1,0 +1,41 @@
+<div class="container">
+    <span class="mat-h1">Get History</span>
+    <mat-divider></mat-divider>
+    <div class="no-details" *ngIf="!list">
+        <div class="content">
+            <div class="img-align">
+                <span class="spacer"></span>
+                <img src="../../../../assets/no_data_found.svg" height="200px" width="200px" alt="no data found" />
+                <span class="spacer"></span>
+            </div>
+            <span class="mat-display-1">Looks like you do not have any getter transaction history</span>
+        </div>
+    </div>
+    <div class="table-section" *ngIf="list">
+        <mat-form-field>
+            <mat-label>Search</mat-label>
+            <input matInput #input (keyup)="applyFilter($event)"
+            placeholder="Search based on name, amount, etc" />
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="{{ column }}" *ngFor="let column of columns; let j = index;">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef>{{ displayColumns[j] }}</th>
+                    <td mat-cell *matCellDef="let element;let i = index;" >
+                        <span *ngIf="column==='sno'" >{{ i+1 }}</span>
+                        <span *ngIf="column!=='sno'" >{{ element[column] }}</span>
+                    </td>
+                </ng-container>
+
+                <tr class="header" mat-header-row *matHeaderRowDef="columns"></tr>
+                <tr class="rows" mat-row *matRowDef="let row; columns: columns;"></tr>
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+                
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+    </div>
+</div>

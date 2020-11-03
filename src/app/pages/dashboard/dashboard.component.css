@@ -1,0 +1,72 @@
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 15.625rem;
+    background-color: #F5F6F6;
+}
+
+.menu-cursor:hover {
+    cursor: pointer;
+}
+
+mat-tree-node:hover {
+    background: #e2f6fb;
+}
+
+/* 
+.side-item-container {
+    display: block;
+    width: 5.5%;
+    position: absolute;
+}
+
+.side-item-container button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+    color: gray;
+}
+
+.side-item-container button:hover {
+    color: #f44336;
+} */
+
+.active-button {
+    color: #f44336;
+}
+
+.flex-content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-content {
+    width: 100%;
+}
+
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.logout-button {
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+mat-toolbar, 
+.sub-nav {
+    background-color: #37bae8;
+    color: white;
+}
+
+/* card styles */

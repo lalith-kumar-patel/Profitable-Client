@@ -1,0 +1,10 @@
+.welcome {
+    height: 100%;
+    padding: 2rem;
+}
+
+.form-container {
+    box-shadow: 0 0 4px grey;
+    padding: 3rem;
+    border-radius: .5rem;
+}

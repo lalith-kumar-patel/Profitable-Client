@@ -1,0 +1,31 @@
+.form-header {
+    display: flex;
+}
+
+.form-header button {
+    padding: 0;
+    margin-top: -0.25rem;
+    box-sizing: 0;
+}
+
+.mat-caption {
+    color: grey;
+    letter-spacing: .125rem;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.form-actions {
+    width: 100%;
+    display: flex;
+}
+
+.form-actions button {
+    width: 47.5%;
+}
+
+.space {
+    width: 5%;
+}

@@ -1,0 +1,59 @@
+<div class="nav-content-alignment">
+    <div class="login-form" *ngIf="!isLoggedIn">
+        <span class="spacer"></span>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-heading">
+                <span class="mat-display-1">Hi Admin</span>
+                <mat-divider id="heading-divider"></mat-divider>
+                <span class="mat-h2">Please Login to Verify that its You</span>
+            </div>
+            <mat-form-field>
+                <mat-label>Admin Email ID</mat-label>
+                <input matInput type="email" placeholder="Please use the ID provided to you" required name="email" formControlName="emailId"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" [type]="hide ? 'password' : 'text'" required name="password" formControlName="password" />
+                <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </mat-form-field>
+            <br>
+            <div class="form-actions">
+                <button mat-raised-button id="actionButtonColor" type="submit">Login</button>
+            </div>
+            <div *ngIf="tryToLogin">
+                <h3 class="text-center"> Logging...Please Wait!!</h3>
+            </div>
+            <h5 class="error-message text-center">{{ errorMessage }}</h5>
+        </form>
+        
+        <span class="spacer"></span>
+    </div>
+    <div class="display-flex" *ngIf="isLoggedIn">
+        <aside class="menu-tree">
+            <div class="sticky">
+                <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <mat-tree-node class="node" (click)="navigateToLink(node.url)" *matTreeNodeDef="let node" matTreeNodePadding>
+                        <button mat-icon-button disabled></button>
+                        <span>{{ node.name }}</span>
+                    </mat-tree-node>
+                    <mat-tree-node class="node" *matTreeNodeDef="let node;when:hasChild" matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name" matTreeNodePadding>
+                        <button mat-icon-button>
+                            <mat-icon color="warn" class="mat-icon-rtl-mirror">
+                                {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+                            </mat-icon>
+                        </button>
+                        <span class="menu-cursor">{{ node.name }}</span>
+                    </mat-tree-node>
+                </mat-tree>
+                
+                <mat-divider></mat-divider>
+                <button class="logout-button" (click)="isLoggedIn=false" mat-raised-button id="actionButtonColor">Logout</button>
+            </div>
+        </aside>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

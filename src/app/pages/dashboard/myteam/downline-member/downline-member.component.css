@@ -1,0 +1,50 @@
+.container {
+    height: 100vh;
+    padding: 2rem;
+}
+
+.mat-form-field {
+    font-size: .875rem;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+mat-divider {
+    width: 12.5rem;
+    margin-bottom: 1.25rem;
+    border-top-color: #f44336;
+    margin-top: 1.25rem;
+}
+
+.rows {
+    transition: all 500ms 100ms;
+}
+
+.rows:hover {
+    transform: scale(1.025, 1.025);
+}
+
+.header {
+    background-color: #37bae8;
+}
+
+th {
+    color: white;
+}
+
+.no-details {
+    display: flex;
+    justify-content: center;
+}
+
+.no-details span {
+    letter-spacing: .125rem;
+}
+
+.img-align { 
+    display: flex;
+    margin-bottom: 2rem;
+}

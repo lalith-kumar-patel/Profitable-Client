@@ -1,0 +1,80 @@
+.display-flex {
+    display: flex;
+}
+
+.menu-tree {
+    padding: 0;   
+    background-color: #F5F6F6;
+    width: 20%;
+}
+
+.sticky {
+    position: sticky;
+    top: 4.5rem;
+    background-color: #F5F6F6;
+}
+
+.node {
+    transition: all .5s;
+}
+
+.node:hover {
+    background-color: #e2f6fb;
+    cursor: pointer;
+}
+
+.main-content {
+    margin: 1rem;
+    width: 80%;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+#heading-divider {
+    margin-bottom: 1.25rem;
+    border-top-color: #ff733f;
+    margin-top: 1.25rem;
+    animation: dividerExtend 1s ease-in forwards;
+}
+
+@keyframes dividerExtend {
+    from { width: 0rem; } 
+    to { width: 12.5rem; }
+}
+
+mat-form-field {
+    width: 15.625rem;
+}
+
+form {
+    box-shadow: 0 0 .25rem grey;
+    padding: 3rem 6rem 3rem 6rem;
+    margin: 3rem 0 3rem;
+    border-radius: .25rem;
+}
+
+.form-heading {
+    margin-bottom: 1rem;
+}
+
+.form-heading span {
+    letter-spacing: .125rem;
+}
+
+.form-actions button {
+    margin-top: .5rem;
+    width: 6rem;
+}
+
+.logout-button {
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

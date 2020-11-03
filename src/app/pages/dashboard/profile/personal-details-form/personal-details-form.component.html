@@ -1,0 +1,86 @@
+
+<div class="personal-details">
+    <span class="mat-h1">Personal Details</span>
+    <mat-divider></mat-divider>
+    <form [formGroup]="personalDetForm" (ngSubmit)="onSubmit()">
+        <div class="center-horizontally">
+            <div>
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text" name="fname" formControlName="fname" [readonly]="disableFormEdit" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" name="lname" formControlName="lname" [readonly]="disableFormEdit" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [type]="disableFormEdit ? 'text' : 'date'" name="dob" formControlName="dob" [readonly]="disableFormEdit" />
+                </mat-form-field>
+            </div>
+            <br>
+            <div>
+                <mat-form-field>
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(value)]="selectedGender" formControlName="gender">
+                        <mat-option *ngFor="let gender of genders" [value]="gender" [disabled]="disableFormEdit">
+                            {{ gender }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" name="emailId" formControlName="emailId" readonly />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput type="tel" name="phoneNumber" formControlName="phoneNumber" readonly />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button (click)="disableFormEdit=!disableFormEdit" type="submit" 
+            id="actionButtonColor" mat-raised-button>
+                {{ !disableFormEdit ? 'Confirm Changes' : 'Update Details' }}
+            </button>
+            <div class="space"></div>
+            <button (click)="changePassword=true" *ngIf="!changePassword" 
+            mat-button id="passiveButtonColor">Change Password</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="changePassword" class="change-password">
+    <form [formGroup]="changeDetForm" (ngSubmit)="onSubmitchange()">
+        <div class="form-heading">
+            <span class="mat-h1">Change Password</span>
+        </div>
+        <mat-divider id="matDividerCenter"></mat-divider>
+        <div class="form-heading">
+            <span class="mat-body-1">Make sure you choose a Secure Password</span>
+        </div>
+        <div class="center-horizontally">
+            <mat-form-field>
+                <mat-label>Old Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password" />
+                <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>New Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required formControlName="newPassword" />
+                <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Confirm New Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" required formControlName="confirmNewPassword" />
+                <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </mat-form-field>
+        </div>
+        
+        <div class="form-actions">
+            <button id="passiveButtonColor" mat-button (click)="changePassword=false">Cancel</button>
+            <div class="space"></div>
+            <button id="actionButtonColor" mat-raised-button type="submit">Confirm</button>
+        </div>
+   </form>
+</div>

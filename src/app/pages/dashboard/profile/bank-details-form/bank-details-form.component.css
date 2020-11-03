@@ -1,0 +1,28 @@
+mat-form-field {
+    margin-right: 2rem;
+    width: 15.625rem;
+}
+
+
+form {
+    margin-top: 2rem;
+    padding: 3rem 6rem 3rem 6rem;
+    border-radius: .25rem;
+    box-shadow: 0 0 .25rem grey;
+}
+
+mat-divider {
+    width: 12.5rem;
+    margin-bottom: 1.25rem;
+    border-top-color: #f44336;
+    margin-top: 1.25rem;
+}
+
+.bank-details {
+    padding: 2rem;
+}
+
+.center-horizontally {
+    display: flex;
+    justify-content: space-evenly;
+}

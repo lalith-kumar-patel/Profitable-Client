@@ -1,0 +1,73 @@
+.info-cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+
+mat-card-content {
+    display: block;
+}
+
+.home {
+    height: 100%;
+}
+
+.textarea {
+    padding: 4rem;
+}
+
+.textarea mat-form-field {
+    width: 100%;
+}
+
+form {
+    margin-top: 2rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#matDividerCenter {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    border-top-color: #f44336;
+    animation: dividerExtendCenter 1s ease-in forwards;
+}
+
+@keyframes divierExtendCenter {
+    from { width: 2rem; } 
+    to { width: 20rem; }
+}
+
+.textarea-heading,
+.info-cards-heading {
+    text-align: center;
+}
+
+.textarea-heading span {
+    letter-spacing: .0625rem;
+    padding: 1rem 0 1rem 0;
+}
+
+textarea {
+    height: 9.375rem;
+}
+
+.notifications {
+    padding: 0 6rem 0 6rem;
+}
+
+.notifications span {
+    padding-bottom: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.dash-divide {
+    border-top-color: #f44336;
+    margin: 4rem 10rem 4rem 10rem;
+}

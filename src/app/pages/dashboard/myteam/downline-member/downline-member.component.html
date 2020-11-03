@@ -1,0 +1,70 @@
+<div class="container">
+    <span class="mat-h1">Downline Members List</span>
+    <mat-divider></mat-divider>
+    <div class="no-details" *ngIf="!list">
+        <div class="content">
+            <div class="img-align">
+                <span class="spacer"></span>
+                <img src="../../../../assets/no_data_found.svg" height="200px" width="200px" alt="no data found" />
+                <span class="spacer"></span>
+            </div>
+            <span class="mat-display-1">Looks like do not have any members yet</span>
+        </div>
+    </div>
+    <div class="table-display" *ngIf="list">
+        <mat-form-field>
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John, PFGL1001" #input />
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+                <!-- Serial Number -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>S.No.</th>
+                    <td mat-cell *matCellDef="let i = index;">{{ i+1 }}</td>
+                </ng-container>
+    
+                <!-- User Code -->
+                <ng-container matColumnDef="userCode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>User Code</th>
+                    <td mat-cell *matCellDef="let row">PG{{ row.id }}</td>
+                </ng-container>
+    
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                    <td mat-cell *matCellDef="let row">{{ row.name | titlecase }}</td>
+                </ng-container>
+    
+                <!-- Pack -->
+                <ng-container matColumnDef="pack">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Package</th>
+                    <td mat-cell *matCellDef="let row">{{ row.packageAmt }}</td>
+                </ng-container>
+    
+                <!-- Join Date -->
+                <ng-container matColumnDef="joinDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Joining Date</th>
+                    <td mat-cell *matCellDef="let row">{{ row.joinDate | dateConverter | date:'medium' }}</td>
+                </ng-container>
+    
+                <!-- Commitment -->
+                <ng-container matColumnDef="totSponsor">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Sponsor</th>
+                    <td mat-cell *matCellDef="let row">{{ row.totSponsor }}</td>
+                </ng-container>
+    
+    
+                <tr class="header" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr class="rows" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
+                </tr>
+            </table>
+    
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+    </div>
+</div>

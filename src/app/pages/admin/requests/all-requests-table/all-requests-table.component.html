@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="match-found" *ngIf="!buttonDisabled && (noMatchFound > 0 || noMatchFound === null)">
+        <mat-card>
+            User ID
+            Name
+            Amount
+            Action
+        </mat-card>
+        <ng-container *ngFor="let data of dataSource">
+            <ng-container *ngIf="isProvider">
+                <mat-card *ngIf="filterAmount===null">
+                    {{ data.providerId }}
+                    {{ data.providerName }}
+                    {{ data.providerAmt }}
+                    <button (click)="onUserSelect(data)" color="warn" [disabled]="buttonDisabled" mat-button>Select</button>
+                </mat-card>
+                <mat-card *ngIf="filterAmount!==null && filterAmount===data.providerAmt">
+                    {{ data.providerId }}
+                    {{ data.providerName }}
+                    {{ data.providerAmt }}
+                    <button (click)="onUserSelect(data)" color="warn" [disabled]="buttonDisabled" mat-button>Select</button>
+                </mat-card>
+            </ng-container>
+            <ng-container *ngIf="!isProvider">
+                <mat-card *ngIf="filterAmount===null">
+                    {{ data.getterId }}
+                    {{ data.getterName }}
+                    {{ data.getterAmt }}
+                    <button (click)="onUserSelect(data)" color="warn" [disabled]="buttonDisabled" mat-button>Select</button>
+                </mat-card>
+                <mat-card *ngIf="filterAmount!==null && filterAmount===data.getterAmt">
+                    {{ data.getterId }}
+                    {{ data.getterName }}
+                    {{ data.getterAmt }}
+                    <button (click)="onUserSelect(data)" color="warn" [disabled]="buttonDisabled" mat-button>Select</button>
+                </mat-card>
+            </ng-container>
+        </ng-container>
+    </div>
+    
+    <div *ngIf="buttonDisabled" class="button-disabled-message">
+        <span class="mat-body-1">
+            Please select a {{ isProvider ? 'Getter' : 'Provider' }}
+        </span>
+    </div>
+
+    <div class="" *ngIf="noMatchFound === 0 && noMatchFound !== null">
+        <span class="mat-body-1">No match found</span>
+    </div>
+</div>

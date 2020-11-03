@@ -1,0 +1,30 @@
+<mat-toolbar class="position-fixed" [class.mat-elevation-z6]="true">
+    <div class="nav-content">
+        <button mat-button [routerLink]=" ['/'] " class="brand">Profitable Goals</button>
+        <span class="spacer"></span>
+        <div class="links">
+            <button mat-button [routerLink]=" ['/'] ">HOME</button>
+            <button mat-button [routerLink]=" ['/dashboard'] " *ngIf="name">DASHBOARD</button>
+            <button mat-button>OUR PLAN</button>
+            <button mat-button [routerLink]=" ['/register'] " *ngIf="!name">REGISTER</button>
+            <button mat-raised-button id="actionButtonColor" (click)="openLoginFormDialog()" *ngIf="!name">LOGIN</button>
+            <button [matMenuTriggerFor]="menu" #menuRef="matMenuTrigger" mat-button *ngIf="name">
+                <mat-icon>person</mat-icon>
+                {{ name | uppercase }}
+                <mat-icon>{{ !menuRef.menuOpen ? 'arrow_drop_down' : 'close' }}</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <ng-template matMenuContent>
+                    <button [routerLink]=" ['/dashboard'] " mat-menu-item>
+                        <mat-icon>dashboard</mat-icon>
+                        <span>MY DASHBOARD</span>
+                    </button>
+                    <button (click)="logout()" mat-menu-item>
+                        <mat-icon>logout</mat-icon>
+                        <span>LOGOUT</span>
+                    </button>
+                </ng-template>
+            </mat-menu>
+        </div>
+    </div>
+</mat-toolbar>

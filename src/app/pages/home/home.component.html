@@ -1,0 +1,91 @@
+<div class="nav-content-alignment">
+    <section class="register-banner">
+        <mat-grid-list cols="4" rowHeight="fit" style="height:150px" gutterSize="0px">
+            <mat-grid-tile colspan="3">
+                <div class="content">
+                    <h1 class="mat-headline">New Here ?</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci exercitationem eos rerum fugit
+                        iure libero
+                        quibusdam repudiandae,
+                        cum expedita dolorem quasi ad error similique sit ducimus velit reiciendis eveniet id</p>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="1">
+                <button id="actionButtonColor" mat-raised-button>Register</button>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </section>
+    
+    <section class="what-banner">
+        <mat-grid-list cols="2" gutterSize="0px">
+            <mat-grid-tile>
+                <div class="content">
+                    <h4 class="mat-caption">Let's talk money</h4>
+                    <mat-divider></mat-divider>
+            
+                    <h1 class="mat-headline">What is Profitable Goals ?</h1>
+                    <p class="mat-body">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Recusandae rem fuga, reiciendis dignissimos perferendis itaque fugit cupiditate,
+                        quidem explicabo impedit et voluptate consequatur architecto in doloremque! Iste, modi quam.<br>
+                        Architecto voluptatum optio porro non, odio ad nisi eaque numquam expedita vel at
+                        doloribus explicabo voluptas corrupti aspernatur, facilis obcaecati veniam cum provident molestiae!
+                        Voluptatum maiores saepe tenetur sint pariatur natus et quas minima molestias doloribus
+                        exercitationem aliquam,
+                        non architecto corporis reiciendis excepturi nobis vel!<br> Sapiente similique, harum modi soluta
+                        illo ipsum
+                        perspiciatisnisi excepturi omnis corrupti voluptatibus odit cupiditate at
+                        dolores beatae maiores nobis consequuntur libero dignissimos quibusdam, ea autem.</p>
+                    <div class="content-buttons">
+                        <button id="actionButtonColor" mat-raised-button>Register Now</button>
+                        <button id="borderButtonPrimary" id="passiveButtonColor" mat-button>Read the plan</button>
+                    </div>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <img src="../../../assets/home_assets/what_is_pg_img.svg" alt="">
+            </mat-grid-tile>
+        </mat-grid-list>
+    </section>
+    
+    <section class="features-banner">
+        <div class="flex-center">
+            <div>
+                <h4 class="mat-caption">Features</h4>
+                <mat-divider></mat-divider>
+                <h1 class="mat-headline">Why choose Profitable Goals ?</h1>
+            </div>
+        </div>
+        
+        <mat-grid-list cols="2" rowHeight='2:1' gutterSize="0px">
+            <mat-grid-tile *ngFor="let set of featureCardNames let i = index ">
+                <ul>
+                    <li *ngFor="let cardName of featureCardNames[i] let j = index">
+                        <mat-card class="feature-card">
+                            <mat-card-header>
+                                <div mat-card-avatar class="header-image" 
+                                [ngStyle]="{'background-image': 'url('+ imgUrls[i][j] +')'}"></div>
+                                <mat-card-title>{{ cardName }}</mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </li>
+                </ul>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </section>
+
+    <section class="working">
+        <div class="flex-center">
+            <div>
+                <h4 class="mat-caption">FYI</h4>
+                <mat-divider></mat-divider>
+                <h1 class="mat-headline">How it Works ?</h1>
+            </div>
+        </div>
+
+        <!-- Getting started -->
+        <!-- Working hours and T & C -->
+        <!-- Package info? -->
+    </section>
+
+    <section class="summary-banner"></section>
+</div>

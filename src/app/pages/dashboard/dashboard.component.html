@@ -1,0 +1,82 @@
+<mat-sidenav-container class="nav-content-alignment">
+    <!-- Side Menu Content -->
+    <mat-sidenav mode="side" [opened]="opened">
+        <div class="sticky">
+            <mat-toolbar [class.mat-elevation-z2]="true">
+                <span>Menu</span>
+            </mat-toolbar>
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                <mat-tree-node (click)="navigateToLink(node.url)" *matTreeNodeDef="let node" matTreeNodePadding>
+                    <button mat-icon-button disabled></button>
+                    <span class="menu-cursor">{{ node.name }}</span>
+                </mat-tree-node>
+                <mat-tree-node *matTreeNodeDef="let node;when:hasChild" matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name"
+                    matTreeNodePadding>
+                    <button mat-icon-button>
+                        <mat-icon style="color: #ff733f;" class="mat-icon-rtl-mirror">
+                            {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+                        </mat-icon>
+                    </button>
+                    <span class="menu-cursor">{{ node.name }}</span>
+                </mat-tree-node>
+            </mat-tree>
+            <mat-divider></mat-divider>
+            <button class="logout-button" mat-raised-button id="actionButtonColor">Logout</button>
+        </div>
+    </mat-sidenav>
+    <!-- Main Dashboard Content -->
+    <mat-sidenav-content>
+        <mat-toolbar class="sub-nav" [class.mat-elevation-z2]="false" color="primary">
+            <button (click)="opened=!opened" mat-icon-button>
+                <mat-icon *ngIf="!opened">menu</mat-icon>
+                <mat-icon *ngIf="opened">close</mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <span class="brand">Dashboard</span>
+            <span class="spacer"></span>
+        </mat-toolbar>
+        <!-- <div [class.mat-elevation-z1]="true" class="side-item-container">
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>bookmark</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-icon-button>
+                <mat-icon>logout</mat-icon>
+            </button>
+            <mat-divider></mat-divider>
+        </div> -->
+        <div class="flex-content">
+            <div class="main-content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

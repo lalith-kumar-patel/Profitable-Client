@@ -1,0 +1,16 @@
+<div class="dialog">
+    <h1 mat-dialog-title>Please enter the OTP</h1>
+    <div mat-dialog-content>
+        <p>The OTP was sent to {{ data.phoneNumber }}</p>
+        <mat-form-field>
+            <mat-label>OTP</mat-label>
+            <input matInput ref-otp />
+        </mat-form-field><br>
+        <span (click)="onResendOtp()">RESEND OTP<h5 class="success-message">{{successMessage}}</h5><h5 class="error-message">{{errorMessage}}</h5>
+            </span>
+    </div>
+    <div mat-dialog-actions>
+        <button id="actionButtonColor" (click)="onSubmit(otp.value)" mat-raised-button cdkFocusInitial>Send</button>
+        <button id="passiveButtonColor" mat-button (click)="onClose()">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,126 @@
+.info-cards {
+    margin: 1rem;
+}
+
+.set-1, .set-2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.set-2 {
+    margin-top: 2rem;
+}
+
+.mat-h2 {
+    margin-bottom: 0;
+}
+
+mat-card {
+    min-width: 18.75rem;
+}
+
+mat-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-card-footer span {
+    padding: 1rem;
+}
+
+mat-card-footer {
+    text-align: center;
+    background: rgba(211, 211, 211, 0.3);
+    padding: 1rem;
+}
+
+.display-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.display-flex div {
+    text-align: center;
+}
+
+.dash-divide {
+    border-top-color: #f44336;
+    margin: 4rem 10rem 4rem 10rem;
+}
+
+.notifications {
+    padding: 0 6rem 0 6rem;
+}
+
+.notifications span {
+    padding-bottom: 1rem;
+    display: block;
+    text-align: center;
+}
+
+
+/* scrollable sections */
+
+.container {
+    height: 25rem;
+    /* width: 25rem; */
+    border-radius: .5rem;
+    box-shadow: 0 0 .25rem grey;
+    margin: 2rem;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.container pre {
+    animation: vscroll 10s linear infinite;
+}
+
+.scrollable mat-card {
+    min-height: 3rem;
+}
+
+.container::-webkit-scrollbar {
+    width: 0;
+}
+
+@keyframes vscroll {
+    0% { transform: translateY(0vh); }
+    100% {transform: translateY(-100vh); } 
+}
+
+
+
+.copy-icon {
+    color: grey;
+    transition: all 500ms .1s;
+}
+
+.copy-icon:hover {
+    color: #f44336;
+}
+
+
+.footer-content span {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
+
+.footer-content span button {
+    margin-left: .5rem;
+}
+
+.contact-info-icon {
+    margin-right: 1rem;
+}
+
+.pad-left {
+    padding-left: 1rem;
+}
+
+#colorWarn {
+    border-right-color: #f44336;
+}
+
+

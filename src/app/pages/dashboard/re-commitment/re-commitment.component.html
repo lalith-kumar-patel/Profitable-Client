@@ -1,0 +1,38 @@
+<div class="text-section">
+    <span class="mat-h1">Recommitment</span>
+    <mat-divider></mat-divider>
+    <div class="mat-body-1">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro deleniti voluptate rerum laborum, ducimus culpa atque
+            iusto dignissimos alias, molestias, facere voluptatibus eos sunt error. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Neque ullam maiores magnam repellat sed necessitatibus sapiente corporis in aperiam consequuntur.
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <span class="spacer"></span>
+    <form [formGroup]="reCommitmentForm" (ngSubmit)="onSubmit()">
+        <mat-form-field style="width: 100%;">
+            <mat-label>Choose Package</mat-label>
+            <mat-select formControlName="commitmentAmt">
+                <mat-option *ngFor="let package of packages" [value]="package" >
+                    {{ package }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field><br>
+        <div class="form-actions">
+            <button type="submit" mat-raised-button id="actionButtonColor">Commit</button>
+        </div>
+    </form>
+    <span class="spacer"></span>
+</div>
+
+<div class="text-section">
+    <span class="mat-body-1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Voluptatum tempore animi rem delectus officiis reprehenderit quam consequatur, sint, 
+        vitae dolore veritatis alias, id quia dolorem autem earum aliquid? Excepturi a earum aliquid, iusto provident, 
+        possimus magnam et at dolores, dolorem quod delectus? Adipisci dolorum natus fugit dolores voluptatum, optio assumenda?
+    </span>
+</div>

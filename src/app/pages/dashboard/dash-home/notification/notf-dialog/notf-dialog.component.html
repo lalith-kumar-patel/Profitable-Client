@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Provide Help to {{ data.getterName }}</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="details">
+        <div class="detail">
+            <h3>User Id:</h3>
+            <p>{{ data.getterId }}</p>
+        </div>
+        <div class="detail">
+            <h3>Google Pay Number:</h3>
+            <p>{{ data.getterGPAY }}</p>
+        </div>
+        <div class="detail" *ngIf="flag">
+            <span class="mat-body-1">Please Enter the Transaction ID</span>
+            <div mat-dialog-content>
+                <mat-form-field>
+                    <mat-label>Transaction ID</mat-label>
+                    <input matInput [(ngModel)]="data.transactionID" />
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="flag=!flag" *ngIf="!flag" mat-raised-button id="actionButtonColor">Confirm Payment</button>
+    <button mat-raised-button *ngIf="flag" [mat-dialog-close]="data.transactionID" id="actionButtonColor">Submit</button>
+    <button (click)="closeDialog()" id="borderButton" mat-button id="passiveButtonColor">Close</button>
+</mat-dialog-actions>

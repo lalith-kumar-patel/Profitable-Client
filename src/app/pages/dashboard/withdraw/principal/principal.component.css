@@ -1,0 +1,59 @@
+mat-divider {
+    width: 12.5rem;
+    margin-bottom: 1.25rem;
+    border-top-color: #f44336;
+    margin-top: 1.25rem;
+}
+
+.text-section {
+    padding: 2rem;
+}
+
+form {
+    padding: 3rem 10rem 3rem 10rem;
+    border-radius: .25rem;
+    box-shadow: 0 0 .25rem grey;
+}
+
+.alert {
+    display: flex; 
+    margin: 2rem 7rem; 
+    background-color: grey;
+    border-radius: .25rem;
+    box-shadow: 0 0 4px grey;
+}
+
+.alert p { padding: 2rem; margin: 0; }
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.balance-info span {
+    letter-spacing: .125rem;
+}
+
+#matDividerCenter {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    border-top-color: #f44336;
+    animation: dividerExtendCenter 1s ease-in forwards;
+}
+
+@keyframes dividerExtendCenter {
+    from { width: 2rem; } 
+    to { width: 20rem; }
+}
+
+.note{
+    color: tomato;
+}

@@ -1,0 +1,102 @@
+
+<div class="info-cards">
+    <div class="set-1">
+        <mat-card style="width: 16rem; color: white; background-color: green;">
+            <mat-card-content>
+                <span class="mat-h3">Total PH</span><br>
+                <span class="mat-display-2" *ngIf="incomeDetails" >{{ incomeDetails.totProvideHelp!==null ? incomeDetails.totProvideHelp : 0 }}</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card style="width: 16rem; color: white; background-color: red;">
+            <mat-card-content>
+                <span class="mat-h3">Total GH</span><br>
+                <span class="mat-display-2" *ngIf="incomeDetails">{{incomeDetails.totGetHelp!==null ? incomeDetails.totGetHelp : 0 }}</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card style="width: 16rem; color: white; background-color: blue;">
+            <mat-card-content>
+                <span class="mat-h3">Growth Income</span><br>
+                <span class="mat-display-2" *ngIf="incomeDetails">{{incomeDetails.growthIncome!==null ? incomeDetails.growthIncome : 0 }}</span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="set-2">
+        <mat-card style="width: 16rem; color: white; background-color: purple;">
+            <mat-card-content>
+                <span class="mat-h3">Total Earning</span><br>
+                <span class="mat-display-2" *ngIf="incomeDetails">{{incomeDetails.totalIncome!==null ? incomeDetails.totalIncome : 0}}</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card style="width: 16rem; color: white; background-color: burlywood;">
+            <mat-card-content>
+                <span class="mat-h3">Commitment Amount</span><br>
+                <span class="mat-display-2" *ngIf="incomeDetails">{{ incomeDetails.commitmentAmt }}</span><br>
+                <span class="mat-caption" *ngIf="incomeDetails">{{ incomeDetails.commitmentDate | dateConverter | date:'medium'  }}</span>
+            </mat-card-content>
+        </mat-card>
+    </div> 
+</div>
+
+<mat-divider class="dash-divide"></mat-divider>
+
+<span class="mat-body-strong">
+    <div class="pad-left" >Refer Link: {{link}}    
+    <button 
+    [matTooltip]="tooltipText" 
+    [cdkCopyToClipboard]="linkData"
+    matTooltipPosition="after" mat-icon-button>
+        <mat-icon class="copy-icon">content_copy</mat-icon>
+    </button>
+    </div>
+</span>
+
+<mat-divider class="dash-divide"></mat-divider>
+
+<div class="notifications">
+    <span class="mat-h1">Notifications</span>
+    
+    <app-notification *ngIf="providerData"
+    [provider]="providerData">
+    </app-notification>
+
+    <app-notification *ngIf="getterData"
+    [getter]="getterData">
+    </app-notification>
+    
+    <mat-card class="notf-card" [class.mat-elevation-z2]="true" *ngIf="!providerData && !getterData">
+        <mat-card-content>
+            <span class="mat-body">
+                No Notifications
+            </span>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<mat-divider class="dash-divide"></mat-divider>
+
+<div class="display-flex">
+    <div class="announcements">
+        <span class="mat-h1">Annoucements</span>
+        <div class="container">
+            <pre class="text">{{ data1 }}</pre>
+        </div>
+    </div>
+    <div class="achievements">
+        <span class="mat-h1">Achievements</span>
+        <div class="container">
+            <span class="scrollable">
+                <span class="scrollable-details">
+                    <span class="scrollable-details">
+                        <pre class="text">{{ data2 }}</pre>
+                    </span>
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="new-members">
+        <span class="mat-h1">New Members</span>
+        <div class="container">
+            <pre class="text">{{ data3 }}</pre>
+        </div>
+    </div>
+</div>

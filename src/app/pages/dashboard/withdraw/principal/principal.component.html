@@ -1,0 +1,35 @@
+
+<div class="text-section">
+    <span class="mat-h1">Withdraw Principal</span>
+    <mat-divider></mat-divider>
+    <div class="alert mat-body-1" *ngIf="withdrawDisable">
+        <span class="spacer"></span>
+        <p>Cant Withdraw Principal amount today</p>
+        <span class="spacer"></span>
+    </div>
+</div>
+
+<div class="container">
+    <span class="spacer"></span>
+    <form>
+        <div class="balance-info">
+            <span class="mat-h1" *ngIf="incomeDetails.commitmentStatus===2 && incomeDetails.lastCommitmentAmt<incomeDetails.principalAmt">Principal Withdraw Balance : {{ incomeDetails.lastCommitmentAmt | currency:'INR':'symbol':'1.0-0' }}</span>
+            <span class="mat-h1" *ngIf="incomeDetails.commitmentStatus===1 || incomeDetails.lastCommitmentAmt>incomeDetails.principalAmt">Principal Withdraw Balance : {{ incomeDetails.principalAmt | currency:'INR':'symbol':'1.0-0' }}</span>
+        </div>    
+        <mat-divider id="matDividerCenter"></mat-divider>
+        <br>
+        <div class="form-actions">
+            <button (click)="onSubmit()" mat-raised-button id="actionButtonColor" *ngIf="incomeDetails.commitmentStatus===2" [disabled]="withdrawDisable">Withdraw</button>
+        </div>
+        <div *ngIf="incomeDetails.commitmentStatus===1" class="note">*if u want to Withdraw Principal amt, first recommit . <a routerLink="../recommitment" routerLinkActive="active">click here</a> to recommit</div>
+    </form>
+    <span class="spacer"></span>
+</div>
+
+<div class="text-section">
+    <span class="mat-body-1">
+        *Note : Withdraw timings: Monday - Friday | 4:00 PM to 7:00 PM
+    </span>
+</div>
+
+

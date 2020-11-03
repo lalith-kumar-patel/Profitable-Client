@@ -1,0 +1,21 @@
+
+.notf-card mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notf-card mat-card-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notf-card mat-card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#m0Pb0{
+    margin: 0;
+    padding-bottom: 0;
+}

@@ -1,0 +1,32 @@
+<div class="login-form">
+    <div class="form-header">
+        <h1 class="mat-headline">Welcome Back!</h1>
+        <span class="spacer"></span>
+        <button (click)="closeDialog()" mat-icon-button>
+            <mat-icon matSuffix>close</mat-icon>
+        </button>
+    </div>
+    <h4 class="mat-caption">Enter your Email ID and Password to continue</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field appearance="outline">
+            <mat-label>Email ID</mat-label>
+            <input matInput type="email" name="email" formControlName="emailId" />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password" />
+            <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </mat-form-field>
+        <br>
+        <div class="form-actions">
+            <button type="submit" id="actionButtonColor" mat-raised-button>Sign in</button>
+            <div class="space"></div>
+            <button (click)="closeDialog()" id="passiveButtonColor" mat-button>Close</button>
+        </div>
+    </form>
+    <div *ngIf="tryToLogin">
+        <h3 class="text-center"> Logging...Please Wait!!</h3>
+    </div>
+    <h5 class="error-message text-center">{{ errorMessage }}</h5>
+</div>

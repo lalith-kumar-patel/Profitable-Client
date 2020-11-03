@@ -1,0 +1,38 @@
+<div class="" style="height: 100vh; overflow: hidden;">
+    <div class="text-section">
+        <span class="mat-h1">Withdraw Growth</span>
+        <mat-divider></mat-divider>
+        <div class="alert mat-body-1" *ngIf="withdrawDisable">
+            <span class="spacer"></span>
+            <p>Cant Withdraw Growth Bonus Amount today</p>
+            <span class="spacer"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <span class="spacer"></span>
+        <form [formGroup]="growthForm" (ngSubmit)="onSubmit()">
+            <div class="balance-info">
+                <span class="mat-h3">Growth Bonus Withdraw Balance : {{ incomeDetails.growthIncome | currency:'INR':'symbol':'1.0-0' }}</span>
+            </div>
+            <mat-divider id="matDividerCenter"></mat-divider>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Amount</mat-label>
+                <input (keyup)="validateInputAmount($event)" matInput name="amount" formControlName="getterAmt" />
+            </mat-form-field>
+            <br>
+            <div class="form-actions">
+                <button type="submit" mat-raised-button id="actionButtonColor"
+                    [disabled]="withdrawDisable || invalidInput">Withdraw</button>
+            </div>
+        </form>
+        <span class="spacer"></span>
+    </div>
+
+
+    <div class="text-section">
+        <span class="mat-body-1">
+            *Note : Withdraw timings: Monday - Friday | 4:00 PM to 7:00 PM
+        </span>
+    </div>
+</div>

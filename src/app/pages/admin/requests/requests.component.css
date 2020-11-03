@@ -1,0 +1,13 @@
+.action-section {
+    margin: 4rem 1rem 5rem 1rem;
+}
+
+mat-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.requests-container {
+    height: 100vh;
+}

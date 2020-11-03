@@ -1,0 +1,74 @@
+
+<div class="home">
+    <div class="info-cards-heading">
+        <span class="mat-h1">User Summaries</span>
+        <mat-divider id="matDividerCenter" style="margin-top: 1rem;"></mat-divider>
+    </div>
+    <div class="info-cards">
+        <mat-card style="width: 16rem; background-color: #f59574; color: white">
+            <mat-card-content>
+                <span class="mat-h3">Total Members </span><br>
+                <span class="mat-display-2" *ngIf="overviewDetails">{{overviewDetails.totMembers}}</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card style="width: 16rem; background-color: #f38056; color: white">
+            <mat-card-content>
+                <span class="mat-h3">Total Amount Committed </span><br>
+                <span class="mat-display-2" *ngIf="overviewDetails">{{overviewDetails.totCommitmentAmt}}</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card style="width: 16rem; background-color: #f36c3b; color: white">
+            <mat-card-content>
+                <span class="mat-h3">Active Members </span><br>
+                <span class="mat-display-2" *ngIf="overviewDetails">{{overviewDetails.totMembersActive}}</span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-divider class="dash-divide"></mat-divider>
+    <!-- TODO: notification panel for admin -->
+    <div class="notifications">
+        <span class="mat-h1">Notifications</span>
+        <app-admin-notification *ngIf="getterData" [getter]="getterData"></app-admin-notification>
+        <mat-card class="notf-card" [class.mat-elevation-z2]="true" *ngIf="!getterData">
+            <mat-card-content>
+                <span class="mat-body">
+                    No Notifications
+                </span>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-divider class="dash-divide"></mat-divider>
+
+    <div class="textarea">
+        <div class="textarea-heading">
+            <span class="mat-h1">Announcements Creation Area</span>
+            <mat-divider id="matDividerCenter" style="margin-top: 1rem;"></mat-divider>
+            <span class="mat-h3" style="color: grey;">
+                Enter a message in the space provided below, this message will be displayed as an
+                announcement to all the users of Profitable Goals.
+            </span><br>
+            <span class="mat-caption">
+                *Each announcement made lasts for a week
+            </span>
+        </div>
+
+        <form>
+            <mat-form-field appearance="outline">
+                <mat-label>Action Type</mat-label>
+                <mat-select [(value)]="selectedAction">
+                    <mat-option *ngFor="let action of actionTypes" [value]="action">
+                        {{ action }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Type here</mat-label>
+                <textarea matInput ref-data></textarea>
+            </mat-form-field>
+            <br>
+            <div class="form-actions">
+                <button (click)="textAreaData(data.value)" mat-raised-button id="actionButtonColor">Update</button>
+            </div>
+        </form>
+    </div>
+</div>

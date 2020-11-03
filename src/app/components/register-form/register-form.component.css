@@ -1,0 +1,13 @@
+.register-form-container {
+    overflow-y: auto;
+}
+
+.form-header {
+    display: flex;
+}
+
+.form-header button {
+    padding: 0;
+    margin-top: -4px;
+    box-sizing: 0;
+}

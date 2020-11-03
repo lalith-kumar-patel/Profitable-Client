@@ -1,0 +1,55 @@
+/* Primary: #3f51b5 */
+/* Accent: #ff4081 */
+/* Warn: #f44336 */
+
+.container {
+    height: 100vh;
+    padding: 2rem;
+}
+
+mat-divider {
+    width: 12.5rem;
+    margin-bottom: 1.25rem;
+    border-top-color: #f44336;
+    margin-top: 1.25rem;
+}
+
+
+.mat-form-field {
+  font-size: .875rem;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.rows {
+    transition: all 500ms 100ms;
+}
+
+.rows:hover {
+    transform: scale(1.025, 1.025);
+}
+
+.header {
+    background-color: #37bae8;
+}
+
+th {
+  color: white;
+}
+
+.no-details {
+    display: flex;
+    justify-content: center;
+}
+
+.no-details span {
+    letter-spacing: .125rem;
+}
+
+.img-align { 
+    display: flex;
+    margin-bottom: 2rem;
+}
